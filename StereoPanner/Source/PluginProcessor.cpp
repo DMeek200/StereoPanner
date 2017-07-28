@@ -142,14 +142,15 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
 	float *channelDataR = buffer.getWritePointer(1);
 
 	// Calculate p'
-	float pDash = (panPosition + 1.0) / 2.0;
+	float pi = 3.14159;
+	float pDash = (pi*(panPosition + 1)) / 4;
 
 	// Loop runs from 0 to number of samples in the block
 	for (int i = 0; i < numSamples; i++)
 	{
 		// Simple linear panning algorithm
-		channelDataL[i] = channelDataL[i] * (1 - pDash);
-		channelDataR[i] = channelDataR[i] * pDash;
+		channelDataL[i] = channelDataL[i] * cos(pDash);
+		channelDataR[i] = channelDataR[i] * sin(pDash);
     }
 }
 
