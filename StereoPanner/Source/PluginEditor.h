@@ -35,13 +35,13 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class StartingPointAudioProcessorEditor  : public AudioProcessorEditor,
+class StereoPannerAudioProcessorEditor  : public AudioProcessorEditor,
                                            public Timer
 {
 public:
     //==============================================================================
-    StartingPointAudioProcessorEditor (StartingPointAudioProcessor& p);
-    ~StartingPointAudioProcessorEditor();
+    StereoPannerAudioProcessorEditor (StereoPannerAudioProcessor& p);
+    ~StereoPannerAudioProcessorEditor();
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -55,14 +55,14 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
-    StartingPointAudioProcessor& processor;
+    StereoPannerAudioProcessor& processor;
     //[/UserVariables]
 
     //==============================================================================
 
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StartingPointAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StereoPannerAudioProcessorEditor)
 };
 
 //[EndFile] You can add extra defines here...
